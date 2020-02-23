@@ -12,7 +12,7 @@ fetch(baseUrl)
     });
 
 
-function caracthers(json) {
+function characters(json) {
 
     const results = json.results;
     console.dir(results);
