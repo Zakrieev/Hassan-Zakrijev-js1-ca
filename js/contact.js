@@ -1,7 +1,7 @@
 const form = document.querySelector("#contactForm");
 form.addEventListener("submit", checkform);
 
-function Validateform(event) {
+function validateform(event){
   event.preventDefault();
 
   const firstName = document.querySelector("#firstName");
