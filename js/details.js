@@ -7,11 +7,11 @@ if (params.has("id")) {
   document.location.href = "/";
 }
 
-const BaseUrl = "https://rickandmortyapi.com/api/";
-const CharacterUrl = `${baseUrl}character/`;
-const IdUrl = `${characterUrl}${id}`;
+const baseUrl = "https://rickandmortyapi.com/api/";
+const characterUrl = `${baseUrl}character/`;
+const idUrl = `${characterUrl}${id}`;
 
-fetch(IdUrl)
+fetch(idUrl)
   .then(function(response) {
     return response.json();
   })
