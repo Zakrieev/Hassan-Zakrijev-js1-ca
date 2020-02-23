@@ -9,7 +9,7 @@ function ShowCharacters(response) {
   return response.json();
 }
 
-function handleCharacters(json) {
+function DiffCharacters(json) {
   const characterLoad = json.results;
   console.dir(json);
 
@@ -40,11 +40,11 @@ function handleCharacters(json) {
   resultsContainer.innerHTML = html;
 }
 
-function ifError(error) {
+function Error(error) {
   console.log(error);
 }
 
 fetch(Urlcharacter)
   .then(ShowCharacters)
-  .then(handleCharacters)
-  .catch(ifError);
+  .then(DiffCharacters)
+  .catch(Error);
