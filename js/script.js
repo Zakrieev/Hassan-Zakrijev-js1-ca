@@ -1,3 +1,4 @@
+
 const baseUrl = "https://rickandmortyapi.com/api/";
 const Urlcharacter = `${baseUrl}character/`;
 
