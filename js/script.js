@@ -5,14 +5,14 @@ fetch(baseUrl)
         return response.json();
     })
     .then(function(json) {
-        r&m(json);
+        caracthers(json);
     })
     .catch(function() {
         document.location.href = "error.html";
     });
 
 
-function r&m(json) {
+function caracthers(json) {
 
     const results = json.results;
     console.dir(results);
