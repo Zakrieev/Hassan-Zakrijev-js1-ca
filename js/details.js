@@ -24,8 +24,6 @@ fetch(DetailURL)
     console.dir(error);
   });
 
-
-
 function characterDetails(json) {
   console.dir(json);
 	
@@ -49,5 +47,4 @@ function characterDetails(json) {
 
   const location = document.getElementById("location");
   location.innerHTML = json.location.name;
-
 }
