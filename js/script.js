@@ -5,7 +5,7 @@ window.addEventListener("load", event => {
   console.log("page is fully loaded");
 });
 
-function rickAndMorty(response) {
+function ShowCharacters(response) {
   return response.json();
 }
 
@@ -45,6 +45,6 @@ function ifError(error) {
 }
 
 fetch(Urlcharacter)
-  .then(rickAndMorty)
+  .then(ShowCharacters)
   .then(handleCharacters)
   .catch(ifError);
