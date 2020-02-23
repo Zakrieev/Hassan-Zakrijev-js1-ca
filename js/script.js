@@ -1,15 +1,15 @@
-const baseUrl = "https://rickandmortyapi.com/api/";
-const Urlcharacter = `${baseUrl}character/`;
+const baseURL = "https://rickandmortyapi.com/api/";
+const characterURL = `${baseURL}character/`;
 
 window.addEventListener("load", event => {
   console.log("page is fully loaded");
 });
 
-function rickAndMorty(response) {
+function characters(response) {
   return response.json();
 }
 
-function handleCharacters(json) {
+function handleJson(json) {
   const characterLoad = json.results;
   console.dir(json);
 
@@ -40,12 +40,12 @@ function handleCharacters(json) {
   resultsContainer.innerHTML = html;
 }
 
-function ifError(error) {
+function handleError(error) {
   console.log(error);
 }
 
 fetch(Urlcharacter)
-  .then(rickAndMorty)
-  .then(handleCharacters)
-  .catch(ifError);
+  .then(characters)
+  .then(handleJson)
+  .catch(handleError);
     
