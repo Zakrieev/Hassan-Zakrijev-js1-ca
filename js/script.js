@@ -9,7 +9,7 @@ function theCharacters(response) {
   return response.json();
 }
 
-function handleJson(json) {
+function charactersHandle(json) {
   const characterLoad = json.results;
   console.dir(json);
 
@@ -46,5 +46,5 @@ function handleError(error) {
 
 fetch(characterURL)
   .then(theCharacters)
-  .then(handleJson)
+  .then(charactersHandle)
   .catch(handleError);
