@@ -9,9 +9,9 @@ if (params.has("id")) {
 
 const baseUrl = "https://rickandmortyapi.com/api/";
 const Urlcharacter = ${baseUrl}character/;
-const UrlId = ${Urlcharacter}${id};
+const Urlid = ${Urlcharacter}${id};
 
-fetch(UrlId)
+fetch(Urlid)
   .then(function(response) {
     return response.json();
   })
