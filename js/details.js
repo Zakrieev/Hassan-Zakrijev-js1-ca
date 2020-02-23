@@ -22,7 +22,7 @@ fetch(idUrl)
     console.dir(error);
   });
 
-function Details(json) {
+function Detail(json) {
   console.dir(json);
 
   const name = document.querySelector("h1");
