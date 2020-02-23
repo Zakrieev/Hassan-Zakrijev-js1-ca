@@ -1,14 +1,14 @@
 const form = document.querySelector("#contactForm");
 form.addEventListener("submit", checkform);
 
-function checkform(event) {
+function Validateform(event) {
   event.preventDefault();
 
   const firstName = document.querySelector("#firstName");
   const firstNameError = document.querySelector("#firstNameError");
   const firstNameValue = firstName.value;
 
-  if (checkInputLength(firstNameValue) === true) {
+  if (checkInput(firstNameValue) === true) {
     firstNameError.style.display = "none";
   } else {
     firstNameError.style.display = "block";
@@ -18,7 +18,7 @@ function checkform(event) {
   const lastNameError = document.querySelector("#lastNameError");
   const lastNameValue = lastName.value;
 
-  if (checkInputLength(lastNameValue) === true) {
+  if (checkInput(lastNameValue) === true) {
     lastNameError.style.display = "none";
   } else {
     lastNameError.style.display = "block";
@@ -31,11 +31,11 @@ function checkform(event) {
   const emailValue = email.value;
 
   function validateEmail(email) {
-    const regEx = /\S+@\S+\.\S+/;
-    return regEx.test(email);
-  }
+  const regEx = /\S+@\S+\.\S+/;
+  return regEx.test(email);
+}
 
-  if (checkInputLength(emailValue) === true) {
+  if (checkInput(emailValue) === true) {
     emailError.style.display = "none";
   } else {
     emailError.style.display = "block";
@@ -47,7 +47,7 @@ function checkform(event) {
     invalidEmailError.style.display = "block";
   }
 
-  function checkInputLength(value) {
+  function checkInput(value) {
     const trimmedValue = value.trim();
 
     if (trimmedValue.length > 0) {
@@ -61,12 +61,12 @@ function checkform(event) {
   const messageError = document.querySelector("#messageError");
   const messageValue = message.value;
 
-  if (checkInputLength(messageValue) === true) {
+  if (checkInput(messageValue) === true) {
     messageError.style.display = "none";
   } else {
     messageError.style.display = "block";
   }
-  function checkInputLength(value) {
+  function checkInput(value) {
     const trimmedValue = value.trim();
 
     if (trimmedValue.length > 9) {
