@@ -1,6 +1,13 @@
-function updatetext() {
-  document.body.innerHTML = document.body.innerHTML.replace(/The/g, "Replaced");
-  document.body.innerHTML = document.body.innerHTML.replace(/the/g, "replaced");
+function updateText () {
+
+const pageTitle = document.querySelector("h1");
+const formattedTitle = pageTitle.innerText.replace("The", "Replaced");
+pageTitle.innerText = formattedTitle;
+
+const about = document.querySelector(".about");
+const formattedAbout = about.innerText.replace(/The/g, "Replaced").replace(/the/g, "replaced");
+about.innerText = formattedAbout;
+
 }
 
-setTimeout(updatetext, 4000);
+setTimeout(updateText, 4000);
