@@ -36,15 +36,15 @@ function characterDetails(json) {
   const name = document.querySelector("h1");
   name.innerHTML = json.name;
 
-  const status = document.getElementById("status");
+  const status = document.querySelector("status");
   status.innerHTML = json.status;
 
-  const species = document.getElementById("species");
+  const species = document.querySelector("species");
   species.innerHTML = json.species;
 
-  const origin = document.getElementById("origin");
+  const origin = document.querySelector("origin");
   origin.innerHTML = json.origin.name;
 
-  const location = document.getElementById("location");
+  const location = document.querySelector("location");
   location.innerHTML = json.location.name;
 }
