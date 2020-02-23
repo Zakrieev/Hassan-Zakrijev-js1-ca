@@ -8,21 +8,21 @@ if (params.has("id")) {
 }
 
 const baseUrl = "https://rickandmortyapi.com/api/";
-const characterUrl = `${baseUrl}character/`;
-const idUrl = `${characterUrl}${id}`;
+const Urlcharacter = ${baseUrl}character/;
+const UrlId = ${Urlcharacter}${id};
 
-fetch(idUrl)
+fetch(UrlId)
   .then(function(response) {
     return response.json();
   })
   .then(function(json) {
-    Details(json);
+    showDetails(json);
   })
   .catch(function(error) {
     console.dir(error);
   });
 
-function Details(json) {
+function showDetails(json) {
   console.dir(json);
 
   const name = document.querySelector("h1");
