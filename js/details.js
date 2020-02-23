@@ -1,48 +1,46 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 
+let id;
+
 if (params.has("id")) {
-  id = params.get("id");
+    id = params.get("id");
 } else {
-  document.location.href = "/";
+    document.location.href = "index.html";
 }
 
-const baseUrl = "https://rickandmortyapi.com/api/";
-const characterUrl = `${baseUrl}character/`;
-const idUrl = `${characterUrl}${id}`;
+const baseURL = "https://rickandmortyapi.com/api/character/" + id;
 
-fetch(idUrl)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    Details(json);
-  })
-  .catch(function(error) {
-    console.dir(error);
-  });
+fetch(baseURL)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(json) {
+        dataCharacter(json);
+    })
+    .catch(function() {
+        document.location.href = "error.html";
+    });
 
-function Detail(json) {
-  console.dir(json);
+function dataCharacter(json) {
+    console.dir(json);
 
-  const name = document.querySelector("h1");
-  name.innerHTML = json.name;
+    const image = document.querySelector(".details-image");
+    image.src = json.image;
+    image.alt = json.name;
 
-  const status = document.getElementById("status");
-  status.innerHTML = json.status;
+    const name = document.querySelector("h1");
+    name.innerHTML = json.name;
 
-  const species = document.getElementById("species");
-  species.innerHTML = json.species;
+    const status = document.querySelector("#status");
+    status.innerHTML = json.status;
 
-  const origin = document.getElementById("origin");
-  origin.innerHTML = json.origin.name;
+    const species = document.querySelector("#species");
+    species.innerHTML = json.species;
 
-  const location = document.getElementById("location");
-  location.innerHTML = json.location.name;
+    const origin = document.querySelector("#origin");
+    origin.innerHTML = json.origin.name;
 
-  const image = document.querySelector(".details-image");
-  image.src = json.image;
-  image.alt = json.name;
-
-  document.title = json.name + " | " + document.title;
+    const location = document.querySelector("#location");
+    location.innerHTML = json.location.name;
 }
