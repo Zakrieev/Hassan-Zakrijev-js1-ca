@@ -1,15 +1,15 @@
-const URL = "https://thecharactersapi.com/api/";
-const characterURL = ${URL}character/;
+const baseUrl = "https://rickandmortyapi.com/api/";
+const Urlcharacter = `${baseUrl}character/`;
 
 window.addEventListener("load", event => {
   console.log("page is fully loaded");
 });
 
-function theCharacters(response) {
+function rickAndMorty(response) {
   return response.json();
 }
 
-function charactersHandle(json) {
+function handleCharacters(json) {
   const characterLoad = json.results;
   console.dir(json);
 
@@ -24,7 +24,7 @@ function charactersHandle(json) {
       typeOf = "Unknown";
     }
 
-    html += <div class="col-sm-6 col-md-4 col-lg-3">                
+    html += `<div class="col-sm-6 col-md-4 col-lg-3">                
       <div class="card">
           <img class="image" src="${result.image}" alt=${result.name}>
           <div class="details">
@@ -34,17 +34,17 @@ function charactersHandle(json) {
               <a class="btn btn-primary" href="details.html?id=${result.id}">Details</a>
           </div>
       </div>
-  </div>;
+  </div>`;
   });
 
   resultsContainer.innerHTML = html;
 }
 
-function handleError(error) {
+function ifError(error) {
   console.log(error);
 }
 
-fetch(characterURL)
-  .then(theCharacters)
-  .then(charactersHandle)
-  .catch(handleError);
+fetch(Urlcharacter)
+  .then(rickAndMorty)
+  .then(handleCharacters)
+  .catch(ifError);
